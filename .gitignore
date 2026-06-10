@@ -46,3 +46,16 @@ nbdist/
 !*/build/*.html
 !*/build/*.xml
 ruoyi-admin.jar
+
+######################################################################
+# Course project duplicates & temp files
+/mock/
+/test/
+/ruoyi-system(1)/
+/ruoyi-system.zip
+
+### VSCode ###
+.vscode/
+
+### XcodeMap ###
+.xcodemap/

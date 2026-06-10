@@ -37,6 +37,15 @@
     <dependencyManagement>
         <dependencies>
 
+            <!-- JUnit BOM（置于Spring Boot之前以优先控制版本） -->
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.11.4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!-- SpringBoot的依赖配置-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
