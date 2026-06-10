@@ -24,7 +24,7 @@ jobs:
           cache: maven
 
       - name: 运行单元测试（Mockito，无需外部依赖）
-        run: mvn test -pl ruoyi-admin -Dtest="com.ruoyi.system.service.impl.*,com.ruoyi.system.service.CoreServiceTest" -DfailIfNoTests=false -am --no-transfer-progress
+        run: mvn test -pl ruoyi-admin -Dtest="com.ruoyi.system.service.impl.*,com.ruoyi.system.service.CoreServiceTest" -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -am --no-transfer-progress
 
       - name: 上传单元测试报告
         if: always()
@@ -98,6 +98,7 @@ jobs:
           mvn test -pl ruoyi-admin \
             -Dtest="com.ruoyi.web.controller.system.*" \
             -DfailIfNoTests=false \
+            -Dsurefire.failIfNoSpecifiedTests=false \
             -am \
             --no-transfer-progress
 
