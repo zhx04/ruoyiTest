@@ -48,5 +48,8 @@ jobs:
           done
       - name: 初始化测试数据库
         run: mysql -h 127.0.0.1 -u root -proot123 ry-vue < sql/ry_20260417.sql
+      - name: 调试 - 查看JUnit依赖树
+        run: mvn dependency:tree -pl ruoyi-admin -Dscope=test -Dincludes="org.junit*:*" -am --no-transfer-progress
+
       - name: 运行 SysUserControllerTest
         run: mvn test -pl ruoyi-admin -Dtest="com.ruoyi.web.controller.system.SysUserControllerTest" -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -am --no-transfer-progress
