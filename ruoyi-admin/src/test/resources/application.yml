@@ -1,6 +1,8 @@
 # CI 集成测试配置（覆盖主配置的连接信息）
 # src/test/resources 优先级高于 src/main/resources，仅覆盖需要变更的属性
 spring:
+  profiles:
+    active: druid
   datasource:
     druid:
       master:
