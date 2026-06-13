@@ -50,9 +50,9 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     druid:
       master:
-        url: jdbc:mysql://127.0.0.1:3306/ry-vue?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+        url: jdbc:mysql://124.223.79.133:33076/ry-vue?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=Asia/Shanghai
         username: root
-        password: root123
+        password: "Ruoyi@2026!MySQL#76"
       slave:
         enabled: false
       initialSize: 5
@@ -86,17 +86,27 @@ spring:
           config:
             multi-statement-allow: true
   data:
+    # redis 配置
     redis:
-      host: 127.0.0.1
-      port: 6379
-      password: ""
+      # 地址
+      host: 124.223.79.133
+      # 端口，默认为6379
+      port: 6385
+      # 数据库索引
       database: 0
+      # 密码
+      password: "Ruoyi@2026!Redis#85"
+      # 连接超时时间
       timeout: 10s
       lettuce:
         pool:
+          # 连接池中的最小空闲连接
           min-idle: 0
+          # 连接池中的最大空闲连接
           max-idle: 8
+          # 连接池的最大数据库连接数
           max-active: 8
+          # #连接池最大阻塞等待时间（使用负值表示没有限制）
           max-wait: -1ms
 
 token:
